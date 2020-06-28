@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>温明玉的作品集</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/myjs.js"></script>
+    <script src="js/index.js"></script>
+    <script src="./js/jquery-1.11.1.js"></script>
+    <!--百度压缩版-->
+    <!--<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>-->
+    <script>
+        //入口函数
+        /*        jQuery(window).ready(function(){
+                    //需求：鼠标放到li上，li添加active类，并且对应的产品添加selected类
+                    //绑定事件
+                    $(".tab>li").mouseenter(function(){
+                        //给当前li标签添加active类，同时其他li标签去掉active类
+                        $(this).addClass("active").siblings("li").removeClass("active");
+                        //把当前li标签的下标绑到对应的main，给该main添加selected类，同时其他main去掉selected类
+                        $(".main").eq($(this).index()).addClass("selected").siblings("div").removeClass("selected");
+                    })
+                })*/
+
+
+        $(function () {
+            var tabItem = $(".tab-item");
+            var showContent = $(".show-content");
+            var currentTabIndex = 0;
+            tabItem.mousemove(function () {
+                currentTabIndex = $(this).index()
+                $(this).addClass("active").siblings().removeClass("active");
+                showContent.eq($(this).index()).addClass("selected").siblings().removeClass("selected");
+            })
+
+            //点击小图显示大图
+            var showContent = $(".show-content");
+            var mask = $(".mask")
+            var showContentItem = $(".show-content-item")
+            var bigImg = $(".big-img")
+            var bigHeightImg = $(".big-height-img")
+            var bigImgItem = $(".big-img-item")
+            showContent.click(function () {
+                // mask.css("display", "block")
+                mask.addClass("show-block")
+                $('body,html').addClass('fix-bg');
+            })
+            console.log(bigImg)
+            showContentItem.click(function () {
+                bigImgItem.eq(currentTabIndex * 9 + $(this).index()).addClass("big-img-show").siblings().removeClass("big-img-show")
+                // if (currentTabIndex == 4 || currentTabIndex == 5) {
+                //     bigHeightImg.eq((currentTabIndex - 4) * 9 + $(this).index()).addClass("big-img-show").siblings().removeClass("big-img-show")
+                // } else {
+                //     bigImg.eq(currentTabIndex * 9 + $(this).index()).addClass("big-img-show").siblings().removeClass("big-img-show")
+                // }
+            })
+            // var bigImgShow = $(".big-img-item")
+            mask.click(function () {
+                // mask.css("display", "none")
+                mask.removeClass("show-block")
+                bigImg.removeClass("big-img-show")
+                bigHeightImg.removeClass("big-img-show")
+                $("body,html").removeClass('fix-bg')
+            })
+            bigImgItem.click(function (e) {
+                e.stopPropagation()
+                mask.removeClass("show-block")
+                bigImg.removeClass("big-img-show")
+                bigHeightImg.removeClass("big-img-show")
+                $("body,html").removeClass('fix-bg')
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="wrap-layer">
+        <div class="wrap-item img-top">
+            <img src="images/index_img_top.png" alt="">
+        </div>
+        <div class="wrap-item info">
+            <img class="info-title" src="images/icon_title_info.png" alt="">
+            <img src="images/index_img_info.png" alt="">
+        </div>
+        <div class="wrap-item express">
+            <img src="images/icon_title_express.png" alt="">
+            <div class="wrap">
+                <div class="slide" id="slide">
+                    <!--<ul>-->
+                    <!--<li><a href="#"><img src="images/slidepic1.jpg"></a></li>-->
+                    <!--<li><a href="#"><img src="images/slidepic2.jpg"></a></li>-->
+                    <!--<li><a href="#"><img src="images/slidepic3.jpg"></a></li>-->
+                    <!--<li><a href="#"><img src="images/slidepic4.jpg"></a></li>-->
+                    <!--<li><a href="#"><img src="images/slidepic5.jpg"></a></li>-->
+                    <!--</ul>-->
+                    <div class="slide-wrap">
+                        <div class="small-slide-item">
+                            <div class="slide-item-title">深圳市前海联众在线金融服务有限公司</div>
+                            <div class="slide-item-info">
+                                <div class="position">UI设计师</div>
+                                <div class="time">2016.06-2017.05</div>
+                            </div>
+                            <div class="slide-item-content">
+                                <p>1、负责完成公司网站各页面的UI设计，包括界面视觉设计和风格设计； </p>
+                                <p>2、负责网站活动页面的UI设计，与前端密切配合实现页面代码</p>
+                                <p>3、参与用户需求讨论，从视觉设计和用户体验的角度提出建议和解决方案；</p>
+                                <p>4、配合需求分析和开发人员进行页面布局和效果的整体实现，保证最终设计质量。 </p>
+                                <p>5、完成上级布置的其他设计方面的工作。 </p>
+                            </div>
+                        </div>
+                        <div class="slide-item">
+                            <div class="slide-item-title">深圳市麦田网络科技有限公司</div>
+                            <div class="slide-item-info">
+                                <div class="position">UI设计师</div>
+                                <div class="time">2018.10-2020.02</div>
+                            </div>
+                            <div class="slide-item-content">
+                                <p>1、负责公司所研发的互联网项目UI设计，包括但不限于APP、web页面； </p>
+                                <p>2、全程参与公司旗下产品小麦专猎及校课宝的前期构思、产品走向及概念传达、产品风格确定；</p>
+                                <p>3、根据产品经理的需求设计全新UI页面，协助前端技术人员完成APP及网站的开发工作，并在开发完成后进行简单的测试，反馈给技术以作改进；</p>
+                                <p>4、对用户的反馈进行后续跟踪记录，为后期设计调整做好准备； </p>
+                                <p>5、员工工服及工牌、名片、企业文化墙、宣传视频等地推材料的设计与制作； </p>
+                                <p>6、公司其他教育类子产品的宣传单、海报等物料设计。</p>
+                            </div>
+                        </div>
+                        <div class="small-slide-item">
+                            <div class="slide-item-title">深圳市麦田网络科技有限公司</div>
+                            <div class="slide-item-info">
+                                <div class="position">UI设计师</div>
+                                <div class="time">2018.10-2020.02</div>
+                            </div>
+                            <div class="slide-item-content">
+                                <p>1、负责根据产品经理的需求对网站、APP进行界面设计，协助产品经理完善用户体验；</p>
+                                <p>2、参与APP前期规划构思、用户体验及完善设计、产品概念传达和创意过程；</p>
+                                <p>3、协助开发工程师完成网站、APP的开发或改版工作，并根据需求做相应的设计调整；</p>
+                                <p>4、完成运营需要的推广活动页面设计，以及公司物料的设计； </p>
+                                <p>5、其他平面设计。 </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="arrow" id="arrow">
+                        <a href="javascript:;" class="prev"></a>
+                        <a href="javascript:;" class="next"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrap-item show">
+            <div class="mask"></div>
+            <img class="show-title" src="images/icon_title_show.png" alt="">
+            <img src="images/img_bg_show.png" alt="">
+            <div class="show-wrap">
+                <ul class="tab">
+                    <li class="tab-item active">图标篇</li>
+                    <li class="tab-item">UI界面篇</li>
+                    <li class="tab-item">web界面篇</li>
+                    <li class="tab-item">闪屏篇</li>
+                    <li class="tab-item">整套APP篇</li>
+                    <li class="tab-item">人物插画篇</li>
+                    <li class="tab-item">字体篇</li>
+                    <li class="tab-item">logo篇</li>
+                </ul>
+                <div class="show-content selected">
+                    <div class="show-content-item">
+                        <img src="./images/icon_390_01.png" alt="图标1">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/icon_390_02.png" alt="图标2">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/icon_390_03.png" alt="图标3">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/icon_390_04.png" alt="图标4">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/icon_390_05.png" alt="图标5">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/icon_390_06.png" alt="图标6">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/icon_390_07.png" alt="图标7">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/icon_390_08.png" alt="图标8">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/icon_390_09.png" alt="图标9">
+                    </div>
+                    <div class="big-img big-img-item">
+                        <img src="./images/icon_01.png" alt="">
+                    </div>
+                    <div class="big-img big-img-item">
+                        <img src="./images/icon_02.png" alt="">
+                    </div>
+                    <div class="big-img big-img-item">
+                        <img src="./images/icon_03.png" alt="">
+                    </div>
+                    <div class="big-img big-img-item">
+                        <img src="./images/icon_04.png" alt="">
+                    </div>
+                    <div class="big-img big-img-item">
+                        <img src="./images/icon_05.png" alt="">
+                    </div>
+                    <div class="big-img big-img-item">
+                        <img src="./images/icon_06.png" alt="">
+                    </div>
+                    <div class="big-img big-img-item">
+                        <img src="./images/icon_07.png" alt="">
+                    </div>
+                    <div class="big-img big-img-item">
+                        <img src="./images/icon_08.png" alt="">
+                    </div>
+                    <div class="big-img big-img-item">
+                        <img src="./images/icon_09.png" alt="">
+                    </div>
+                </div>
+                <!-- ui界面篇 -->
+                <div class="show-content">
+                    <div class="show-content-item">
+                        <img src="./images/uipage_390_01.png" alt="图标1">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/uipage_390_02.png" alt="图标2">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/uipage_390_03.png" alt="图标3">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/uipage_390_04.png" alt="图标4">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/uipage_390_05.png" alt="图标5">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/uipage_390_06.png" alt="图标6">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/uipage_390_07.png" alt="图标7">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/uipage_390_08.png" alt="图标8">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/uipage_390_09.png" alt="图标9">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/uipage_01.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/uipage_02.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/uipage_03.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/uipage_04.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/uipage_05.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/uipage_06.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/uipage_07.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/uipage_08.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/uipage_09.png" alt="">
+                    </div>
+                </div>
+                <!-- web界面篇 -->
+                <div class="show-content">
+                    <div class="show-content-item">
+                        <img src="./images/web_390_01.png" alt="图标1">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/web_390_02.png" alt="图标2">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/web_390_03.png" alt="图标3">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/web_390_04.png" alt="图标4">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/web_390_05.png" alt="图标5">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/web_390_06.png" alt="图标6">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/web_390_07.png" alt="图标7">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/web_390_08.png" alt="图标8">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/web_390_09.png" alt="图标9">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/web_01.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/web_02.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/web_03.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/web_04.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/web_05.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/web_06.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/web_07.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/web_08.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/web_09.png" alt="">
+                    </div>
+                </div>
+                <!-- 闪屏 -->
+                <div class="show-content">
+                    <div class="show-content-item">
+                        <img src="./images/splash_390_01.png" alt="图标1">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/splash_390_02.png" alt="图标2">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/splash_390_03.png" alt="图标3">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/splash_390_04.png" alt="图标4">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/splash_390_05.png" alt="图标5">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/splash_390_06.png" alt="图标6">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/splash_390_07.png" alt="图标7">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/splash_390_08.png" alt="图标8">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/splash_390_09.png" alt="图标9">
+                    </div>
+                    <div class="big-img big-img-item">
+                        <img src="./images/splash_01.png" alt="">
+                    </div>
+                    <div class="big-img big-img-item">
+                        <img src="./images/splash_02.png" alt="">
+                    </div>
+                    <div class="big-img big-img-item">
+                        <img src="./images/splash_03.png" alt="">
+                    </div>
+                    <div class="big-img big-img-item">
+                        <img src="./images/splash_04.png" alt="">
+                    </div>
+                    <div class="big-img big-img-item">
+                        <img src="./images/splash_05.png" alt="">
+                    </div>
+                    <div class="big-img big-img-item">
+                        <img src="./images/splash_06.png" alt="">
+                    </div>
+                    <div class="big-img big-img-item">
+                        <img src="./images/splash_07.png" alt="">
+                    </div>
+                    <div class="big-img big-img-item">
+                        <img src="./images/splash_08.png" alt="">
+                    </div>
+                    <div class="big-img big-img-item">
+                        <img src="./images/splash_09.png" alt="">
+                    </div>
+                </div>
+                <!-- 整套APP -->
+                <div class="show-content">
+                    <div class="show-content-item">
+                        <img src="./images/app_390_01.png" alt="图标1">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/app_390_02.png" alt="图标2">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/app_390_03.png" alt="图标3">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/app_390_04.png" alt="图标4">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/app_390_05.png" alt="图标5">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/app_390_06.png" alt="图标6">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/app_390_07.png" alt="图标7">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/app_390_08.png" alt="图标8">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/app_390_09.png" alt="图标9">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/app_01.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/app_02.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/app_03.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/app_04.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/app_05.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/app_06.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/app_07.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/app_08.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/app_09.png" alt="">
+                    </div>
+                </div>
+                <!-- 人物插画 -->
+                <div class="show-content">
+                    <div class="show-content-item">
+                        <img src="./images/characterillustration_390_01.png" alt="图标1">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/characterillustration_390_02.png" alt="图标2">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/characterillustration_390_03.png" alt="图标3">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/characterillustration_390_04.png" alt="图标4">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/characterillustration_390_05.png" alt="图标5">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/characterillustration_390_06.png" alt="图标6">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/characterillustration_390_07.png" alt="图标7">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/characterillustration_390_08.png" alt="图标8">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/characterillustration_390_09.png" alt="图标9">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/characterillustration_01.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/characterillustration_02.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/characterillustration_03.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/characterillustration_04.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/characterillustration_05.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/characterillustration_06.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/characterillustration_07.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/characterillustration_08.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/characterillustration_09.png" alt="">
+                    </div>
+                </div>
+                <!-- 字体篇 -->
+                <div class="show-content">
+                    <div class="show-content-item">
+                        <img src="./images/font_390_01.png" alt="图标1">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/font_390_02.png" alt="图标2">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/font_390_03.png" alt="图标3">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/font_390_04.png" alt="图标4">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/font_390_05.png" alt="图标5">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/font_390_06.png" alt="图标6">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/font_390_07.png" alt="图标7">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/font_390_08.png" alt="图标8">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/font_390_09.png" alt="图标9">
+                    </div>
+                    <div class="big-img big-img-item">
+                        <img src="./images/font_01.png" alt="">
+                    </div>
+                    <div class="big-img big-img-item">
+                        <img src="./images/font_02.png" alt="">
+                    </div>
+                    <div class="big-img big-img-item">
+                        <img src="./images/font_03.png" alt="">
+                    </div>
+                    <div class="big-img big-img-item">
+                        <img src="./images/font_04.png" alt="">
+                    </div>
+                    <div class="big-img big-img-item">
+                        <img src="./images/font_05.png" alt="">
+                    </div>
+                    <div class="big-img big-img-item">
+                        <img src="./images/font_06.png" alt="">
+                    </div>
+                    <div class="big-img big-img-item">
+                        <img src="./images/font_07.png" alt="">
+                    </div>
+                    <div class="big-img big-img-item">
+                        <img src="./images/font_08.png" alt="">
+                    </div>
+                    <div class="big-img big-img-item">
+                        <img src="./images/font_09.png" alt="">
+                    </div>
+                </div>
+                <!-- logo篇 -->
+                <div class="show-content">
+                    <div class="show-content-item">
+                        <img src="./images/logo_390_01.png" alt="图标1">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/logo_390_02.png" alt="图标2">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/logo_390_03.png" alt="图标3">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/logo_390_04.png" alt="图标4">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/logo_390_09.png" alt="图标9">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/logo_390_05.png" alt="图标5">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/logo_390_06.png" alt="图标6">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/logo_390_07.png" alt="图标7">
+                    </div>
+                    <div class="show-content-item">
+                        <img src="./images/logo_390_08.png" alt="图标8">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/logo_01.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/logo_02.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/logo_03.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/logo_04.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/logo_09.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/logo_05.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/logo_06.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/logo_07.png" alt="">
+                    </div>
+                    <div class="big-height-img big-img-item">
+                        <img src="./images/logo_08.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrap-item thanks">
+        <img src="images/img_bg_thanks.png" alt="">
+    </div>
+    </div>
+    <div class="step">
+        <div class="step-item">
+            <img src="images/icon_title_info.png" alt="">
+        </div>
+        <div class="step-item">
+            <img src="images/icon_title_info.png" alt="">
+        </div>
+        <div class="step-item">
+            <img src="images/icon_title_express.png" alt="">
+        </div>
+        <div class="step-item">
+            <img src="images/icon_title_show.png" alt="">
+        </div>
+        <div class="step-item">
+            <img src="images/icon_title_info.png" alt="">
+        </div>
+    </div>
+</body>
+
+</html>
